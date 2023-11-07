@@ -5,6 +5,4 @@ joblib
 pandas
 numpy
 scikit-learn
-black
-click
 gunicorn
