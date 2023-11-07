@@ -1,0 +1,10 @@
+flask
+flask_wtf
+wtforms
+joblib
+pandas
+numpy
+scikit-learn
+black
+click
+gunicorn
