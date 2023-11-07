@@ -99,7 +99,7 @@ def predict():
         input_df = test_transform(input_df)
         prediction = pipeline.predict(input_df)
 
-        return render_template('index.html', prediction=f"Predicted Price: {np.abs(prediction[0]:.2f)} USD")
+        return render_template('index.html', prediction="Predicted Price: {:.2f} USD".format(abs(prediction[0])))
     except Exception as e:
         error_message = str(e)
         print(f"An error occurred: {error_message}")
