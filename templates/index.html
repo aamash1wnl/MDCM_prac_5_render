@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Make">Make:</label>
+                    <input type="text" id="Make" name="Make" required>
+                </div>
+                <div class="input-group">
+                    <label for="Model">Model:</label>
+                    <input type="text" id="Model" name="Model" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Year">Year:</label>
+                    <input type="number" id="Year" name="Year" required>
+                </div>
+                <div class="input-group">
+                    <label for="Kilometer">Kilometer:</label>
+                    <input type="number" id="Kilometer" name="Kilometer" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Fuel Type">Fuel Type:</label>
+                    <input type="text" id="Fuel Type" name="Fuel Type" required>
+                </div>
+                <div class="input-group">
+                    <label for="Transmission">Transmission:</label>
+                    <input type="text" id="Transmission" name="Transmission" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Location">Location:</label>
+                    <input type="text" id="Location" name="Location" required>
+                </div>
+                <div class="input-group">
+                    <label for="Color">Color:</label>
+                    <input type="text" id="Color" name="Color" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Owner">Owner:</label>
+                    <input type="text" id="Owner" name="Owner" required>
+                </div>
+                <div class="input-group">
+                    <label for="Seller Type">Seller Type:</label>
+                    <input type="text" id="Seller Type" name="Seller Type" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Engine">Engine:</label>
+                    <input type="text" id="Engine" name="Engine" required>
+                </div>
+                <div class="input-group">
+                    <label for="Max Power">Max Power:</label>
+                    <input type="text" id="Max Power" name="Max Power" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Max Torque">Max Torque:</label>
+                    <input type="text" id="Max Torque" name="Max Torque" required>
+                </div>
+                <div class="input-group">
+                    <label for="Drivetrain">Drivetrain:</label>
+                    <input type="text" id="Drivetrain" name="Drivetrain" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Length">Length:</label>
+                    <input type="number" step="0.01" id="Length" name="Length" required>
+                </div>
+                <div class="input-group">
+                    <label for="Width">Width:</label>
+                    <input type="number" step="0.01" id="Width" name="Width" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Height">Height:</label>
+                    <input type="number" step="0.01" id="Height" name="Height" required>
+                </div>
+                <div class="input-group">
+                    <label for="Seating Capacity">Seating Capacity:</label>
+                    <input type="number" id="Seating Capacity" name="Seating Capacity" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="Fuel Tank Capacity">Fuel Tank Capacity:</label>
+                    <input type="number" step="0.01" id="Fuel Tank Capacity" name="Fuel Tank Capacity" required>
+                </div>
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <p class="result">{{ prediction }}</p>
+        {% endif %}
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
